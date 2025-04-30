@@ -1,97 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Konversi Suhu - Ocha</title>
-
-    <!-- CSS External -->
-     <link rel="stylesheet" href="style.css">
+    <title>Website Konversi Suhu - Priska</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Header Content --> 
+    <section>
     <header>
-        <h1>Website Konversi Suhu - Ocha</h1>
+        <h1 >Website Konversi Suhu - Priska</h1>
     </header>
 
-    <!-- Main Content --> 
     <main>
-        <!--Introduction-->
-        <section>
-        <!--Intro-->
-        <p> Selamat datang di website konversi suhu pertama buatan ocha, semoga membantu. </p>
-        </section>
+        <br>
+        <div class="introduction">
+            <p>Website ini akan membantu kamu dalam mengkonversi suhu, cukup masukkan suhu derajat Celsius (&deg;C)  yang ingin kamu ubah menjadi Fahrenheit (&deg;F).</p>
+        </div>
+        <br>
+        <div class="input-group">
+            <label for="celsius">Celsius (&deg;C):</label>
+            <textarea
+                id="celsius"
+                rows="1"
+            ></textarea>
+        </div>
 
-        <!--Form Konversi Suhu-->
-        <form class="section-content">
-            <div class="section-item">
-                <label for="">Celcius (&deg;C) :</label>
-            </div>
+        <div class="button-group">
+            <button id="btnConvert">Konversi</button>
+            <button
+                id="btnReset"
+                class="reset"
+            >
+                Reset
+            </button>
+            <button
+                id="btnReverse"
+                class="reverse"
+            >
+                Reverse
+            </button>
+        </div>
 
-            <div class="section-item">
-                <textarea id="konversi-input"></textarea>
-            </div>
+        <div class="input-group">
+            <label for="fahrenheit">Fahrenheit (&deg;F):</label>
+            <textarea id="fahrenheit" readonly rows="1"></textarea>
+        </div>
 
-            <!--Form Action-->
-            <div class="section-item">
-                <button class="bg-1">Konversi</button>
-                <button class="bg-2">Reset</button>
-                <button class="bg-3">Reverse</button>
-            </div>
-        </form>
+        <div class="input-group">
+            <label>Cara Kalkulasi:</label>
+            <textarea id="calculation" readonly rows="1"></textarea>
+        </div>
+        <h2>Fahrenheit ke Celsius</h2>
+        <div class="formula">
+            <h3 class="formula-title">
+                Cara Konversi Dari Celsius (&deg;C) ke Fahrenheit (&deg;F)
+            </h3>
+            <p>
+                Suhu <span class="text-italic">S</span> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <span class="text-italic">S</span> dalam derajat Celsius (&deg;C) kali 9/5 tambah 32.
+            </p>
 
-        <!--Hasil Konversi Suhu-->
-        <section class="section-content">
-            <div class="section-item">
-                <label for="result-input">Fahrenheit (&deg;F) :</label>
-            </div>
+            <p>
+                <span class="text-italic">S</span><sub>(&deg;F)</sub> = (<span class="text-italic">S</span><sub>(°C)</sub> × 9/5) + 32
+            </p>
 
-            <div class="section-item">
-                <textarea id="result-input"></textarea>
-            </div>
-        </section>
+            <p>atau</p>
 
-        <!--Penjelasan-->
-        <section class="section-content">
-            <div class="section-item">
-                <label for="calculate-detail">Cara Kalkulasi</label>
-            </div>
-
-            <div class="section-item">
-                <textarea id="calculate-detail" readonly></textarea>
-            </div>
-        </section>
-
-        <!--Informasi Tambahan-->
-        <section>
-            <header>
-                <h1>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h1>
-            </header>
-
-
-            <!--Konten Informasi-->
-            <article>
-                <p> Suhu <span class="formula">S</span> dalam derajat Fahrenheit (&deg;F)</p>
-
-                <!--Formula-->
-                <div class="formula">
-                    S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 9/5) + 32
-                </div>
-                    atau
-                    <div class="formula">
-                        S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 1,8) + 32
-                    </div>
-            </article>
-        </section>
+            <p>
+                <span class="text-italic">S</span><sub>(&deg;F)</sub> = (<span class="text-italic">S</span><sub>(&deg;C)</sub>× 1.8) + 32
+            </p>
+        </div>
+    </div>
+    </section>
+    <script src="script.js"></script>
     </main>
-
-    <!-- Footer Content --> 
     <footer>
-        <p>&copy; 2025 Ocha. All rights reserved.</p>
+        <p>&copy;2025 Priska. All right reserved.</p>
     </footer>
-<!-- JavaScript External -->
+        <!-- JavaScript External -->
         <script src="script.js"></script>
 </body>
 
