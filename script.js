@@ -1,14 +1,15 @@
 console.log('JavaScript is working!');
 
 function validateForm() {
-    const inputCelcius = document.getElementById('konversi-input');
-    console.log(inputCelcius.value);
+    const inputCelsius = document.getElementById('celsius');
+    console.log(inputCelsius.value);
 
-    if (inputCelcius.value === '') {
-        alert('Input tidak boleh kosong!');
-    } else {
-        /// Convert to fahrenheit
+    // Validasi input untuk Celsius
+    if (inputCelsius.value === '') {
+        alert('Masukkan angka terlebih dahulu!');
+        return false; // Menghentikan eksekusi jika input kosong
     }
+    return true; // Mengembalikan true jika input valid
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -25,29 +26,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Convert Celsius to Fahrenheit and vice versa
     function convert(reverse = false) {
-        if (reverse == false && inputCelsius.value !== '') {
+        if (reverse == false) {
+            // Validasi sebelum konversi
+            if (!validateForm()) {
+                return; // Jika validasi gagal, hentikan eksekusi
+            }
+
             const celsius = parseFloat(inputCelsius.value);
             const fahrenheit = (celsius * 9) / 5 + 32;
             inputFahrenheit.value = fahrenheit.toFixed(2);
-            inputCalculation.value = `${celsius}°C * (9/5) + 32 = ${fahrenheit.toFixed(
-                2
-            )}°F`;
-        }
+            inputCalculation.value = `${celsius}°C * (9/5) + 32 = ${fahrenheit.toFixed(2)}°F`;
 
-        if (reverse && inputFahrenheit.value !== '') {
+        } else {
+            // Konversi dari Fahrenheit ke Celsius
             const fahrenheit = parseFloat(inputFahrenheit.value);
             const celsius = ((fahrenheit - 32) * 5) / 9;
             inputCelsius.value = celsius.toFixed(2);
-            inputCalculation.value = `(${fahrenheit}°F - 32) * 5/9 = ${celsius.toFixed(
-                2
-            )}°C`;
+            inputCalculation.value = `(${fahrenheit}°F - 32) * 5/9 = ${celsius.toFixed(2)}°C`;
         }
     }
 
     function reset() {
-        document.getElementById('celsius').value = '';
-        document.getElementById('fahrenheit').value = '';
-        document.getElementById('calculation').value = '';
+        inputCelsius.value = '';
+        inputFahrenheit.value = '';
+        inputCalculation.value = '';
     }
 
     function reverse() {
